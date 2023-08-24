@@ -1,0 +1,47 @@
+
+{%extends 'layout.html'%}
+{% load static %}
+
+
+
+
+{%block content%}
+
+<header class="row">
+    <div class=" item-expand col-md-4">
+        <img src="{% static 'portafolio/foton.jpg'%}" width="400" height="400">
+    </div>
+    <div class="col-md-6">
+        <h1>Soy <strong>Maiker Stanley Cañon Garces</strong> </h1>
+        <h3>Soy desarrollador junior python</h3>
+        <p>Soy estudiante de septimo semestre de ingenieria de software, en la mejor universidad del sur de colombia "USCO ". Trabajo con python, Django, bootstrap, React, MongoDB, SQL, HTML Y css. Cada dia sigo aprendiendo</p>
+        <a href="https://www.linkedin.com/in/maiker-ca%C3%B1on-9785a8283" class="btn btn-success" target="_blank">Linkedin</a>
+    </div>
+    
+</header>
+   <div class="row my-4 text-center" class="text-light">
+        
+        <h1>Aqui los proyectos</h1>
+        <p>Disfruta de la maravilla de la tecnología</p>
+        <!-- mostrar el titulo de los proyectos -->
+
+        {%for i in proyectos%}
+        <div class="col-md-4 p-4">
+            <div class="card h-100 card-project " >
+                <div class="card-body ">
+                    <h3>{{i.title}}</h3><p>{{i.description}}</p>
+                    <img src="{{i.image.url}} " class="img-fluid border" > <!--la clase de boostrap no permite que las imagenes se salgan de las tarjetas-->
+                    
+                    {%if i.url%}
+                
+                        <a href="{{i.url}}" class="btn btn-primary img-fluid  my-2">{{i.url}}</a>
+                        
+        
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+   </div>
+
+{%endblock%}

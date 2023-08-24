@@ -1,0 +1,33 @@
+{%extends 'layout.html'%}
+{%block content%}
+    <h1>mis publicaciones, no te lo pierdas</h1>
+    {%for pos in post%}
+   <div class="p-3">
+    <div class="card card-body bg-black">
+        <div class="row">
+            <div class="col-3">
+                <img src="{{pos.imagen.url}}"class="img-fluid" alt="imagen cargando">
+            </div>
+            <div class="col-9">
+                        
+                <h1>{{pos.title}}</h1>
+                <!--para formatear la fecha a pos.date, le paso date-->
+                <h2>{{pos.date| date:' l F o '}}</h2>
+                <!--si quiero en mi post principal restringi o limitar lo que se muestra, para que la principal,
+                no se muestre todo, solo lo que quiero que se vea es con truncatechars:"la cantidad que quiero"
+                en este caso la funcion stripstags estripa las etiquetas para que en el html no se vea '<>'-->
+                <p>{{pos.description|striptags| truncatechars:200 }}</p>
+                
+                <!--aqui se hace el llamado a una url, que inicia como blog(variable de space en blog/url: app_name) 
+                    y se le pasa la funcion post_detail, esta funcion requiere de un parametro, se lo pasamos: pos.id
+                -->
+                <a href="{% url 'blog:post_detail' pos.id %}" class="btn btn-primary">{{pos.title}}</a>
+        
+            </div>
+        </div>
+
+    </div>
+   </div>
+
+    {%endfor%}
+{%endblock%}

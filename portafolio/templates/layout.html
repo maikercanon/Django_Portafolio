@@ -1,0 +1,25 @@
+{% load static %} <!--static es para cargar de la carpeta static lo que he cargado en ella, img . pdf etc-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <title>Django Portafolio</title>
+    <link  href="{% static 'portafolio/main.css' %}" rel="stylesheet">
+</head>
+<body class="text-light">
+    {%include 'partials/navbar.html'%}
+    
+    <!--aqui creo una plantilla para importarla en todas mis vistas
+    una sola porcion de codigo para todas las vistas-->
+    <div class="container p-4 " >
+        {%block content%}
+
+        {%endblock%}
+
+    </div>
+
+    <footer>Footer</footer>
+</body>
+</html>

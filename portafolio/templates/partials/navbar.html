@@ -1,0 +1,21 @@
+{% load static%}
+<nav class="navbar navbar-expand bg-success">
+    <div class="container"> <!--si le quito el fluid centra los textos-->
+      <a class="navbar-brand text-white fw-bold fst-italic" href="/">MAIKER CAÑON</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ms-auto">
+          
+            <li class="nav-item ">
+                <a class="nav-link" href="{%url 'blog:posts'%}">Blog</a>
+            </li> 
+            <li class="nav-item d-flex aling-tems-center">
+                <a class="btn btn-primary text-dark " href="{%static 'portafolio/cvcv.pdf' %}" target="_blank">Descarga CV</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
